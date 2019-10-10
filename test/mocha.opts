@@ -1,0 +1,11 @@
+--colors
+--timeout 0
+--slow 50
+--check-leaks
+--full-trace
+--reporter spec
+--inline-diffs
+--throw-deprecation
+--bail
+--exit
+./specs/{,!(node_modules|matrices)/**}/*.spec.js
