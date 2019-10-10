@@ -9,6 +9,7 @@ const {
 } = require('chai');
 const {
   fib,
+  INVALID,
 } = require('../index');
 
 describe('Fibonacci Sequence', () => {
@@ -22,11 +23,11 @@ describe('Fibonacci Sequence', () => {
       fib(EXPECTED_SEQUENCE.length - 1),
     ).to.equal(EXPECTED_SEQUENCE[EXPECTED_SEQUENCE.length - 1]);
 
-    expect(fib(-1)).to.equal(null);
-    expect(fib(null)).to.equal(null);
-    expect(fib(undefined)).to.equal(null);
-    expect(fib({})).to.equal(null);
-    expect(fib(UNSAFE_INTEGER)).to.equal(null);
-    expect(fib(-UNSAFE_INTEGER)).to.equal(null);
+    expect(fib(-1)).to.equal(INVALID);
+    expect(fib(null)).to.equal(INVALID);
+    expect(fib(undefined)).to.equal(INVALID);
+    expect(fib({})).to.equal(INVALID);
+    expect(fib(UNSAFE_INTEGER)).to.equal(INVALID);
+    expect(fib(-UNSAFE_INTEGER)).to.equal(INVALID);
   });
 });
