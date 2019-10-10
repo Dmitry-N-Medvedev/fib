@@ -4,15 +4,15 @@ Object.freeze(baseSequence);
 
 const is_input_valid = (input) => (
   input !== null
-    || typeof nth !== 'undefined'
-    || input >= 0
-    || Number.isSafeInteger(input) === true
+    && typeof input !== 'undefined'
+    && input >= 0
+    && Number.isSafeInteger(input) === true
 );
 
 module.exports.INVALID = null;
 
 module.exports.fib = (nth) => {
-  if (is_input_valid(nth) === true) {
+  if (is_input_valid(nth) === false) {
     return this.INVALID;
   }
 
