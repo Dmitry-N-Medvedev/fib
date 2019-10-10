@@ -3,15 +3,12 @@ const baseSequence = [0, 1];
 Object.freeze(baseSequence);
 
 module.exports.fib = (nth) => {
-  if (nth === null || typeof nth === 'undefined') {
-    return null;
-  }
-
-  if (nth < 0) {
-    return null;
-  }
-
-  if (Number.isSafeInteger(nth) === false) {
+  if (
+    nth === null
+    || typeof nth === 'undefined'
+    || nth < 0
+    || Number.isSafeInteger(nth) === false
+  ) {
     return null;
   }
 
